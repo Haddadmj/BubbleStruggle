@@ -24,6 +24,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.AddForce(movement * speed);
+        _rigidbody2D.MovePosition(_rigidbody2D.position + Vector3.right * movement * (speed * Time.fixedDeltaTime));
     }
 }
