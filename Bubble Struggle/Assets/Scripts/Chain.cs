@@ -12,7 +12,7 @@ public class Chain : MonoBehaviour
     void Start()
     {
         IsFired = false;
-        _player = GameObject.Find("Player").transform;
+        _player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -25,6 +25,7 @@ public class Chain : MonoBehaviour
 
         if (IsFired)
         {
+            transform.position = _player.position;
             transform.localScale = transform.localScale + Vector3.up * (chainSpeed * Time.deltaTime);
         }
         else

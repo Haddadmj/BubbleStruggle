@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody2D.velocity = new Vector2(movement * speed,_rigidbody2D.velocity.y);
+    }
 
-        /*if (Input.GetButton("Fire1"))
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ball")
         {
-            _rigidbody2D.AddForce(new Vector3(0,5f,0),ForceMode2D.Impulse);
-        }*/
-
+            Destroy(GameObject.Find("Chain"));
+            Destroy(gameObject);
+            SceneManager.LoadScene(0);
+        }
     }
 }
