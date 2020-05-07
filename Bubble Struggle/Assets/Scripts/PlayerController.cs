@@ -26,5 +26,10 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D.velocity = new Vector2(movement * speed,_rigidbody2D.velocity.y);
 
+        /*if (Input.GetButton("Fire1"))
+        {
+            _rigidbody2D.AddForce(new Vector3(0,5f,0),ForceMode2D.Impulse);
+        }*/
+
     }
 }
