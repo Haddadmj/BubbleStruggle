@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     
     private Rigidbody2D _rigidbody2D;
-    private Vector2 movement;
+    private float movement;
     
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"),0);
+        movement = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
     {
-        _rigidbody2D.MovePosition(_rigidbody2D.position + Vector3.right * movement * (speed * Time.fixedDeltaTime));
+        _rigidbody2D.velocity = new Vector2(movement * speed,_rigidbody2D.velocity.y);
+
     }
 }
