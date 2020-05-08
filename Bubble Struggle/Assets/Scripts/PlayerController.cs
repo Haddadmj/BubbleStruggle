@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    
+
     private Rigidbody2D _rigidbody2D;
     private float movement;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.velocity = new Vector2(movement * speed,_rigidbody2D.velocity.y);
+        _rigidbody2D.velocity = new Vector2(movement * speed, _rigidbody2D.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

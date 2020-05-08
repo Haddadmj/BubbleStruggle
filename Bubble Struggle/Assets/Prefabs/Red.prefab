@@ -136,3 +136,4 @@ MonoBehaviour:
   startForce: {x: 2, y: 0}
   nextBall: {fileID: 4017348301382196909, guid: 769a69d6253153845852127edde47b1d,
     type: 3}
+  score: 1000

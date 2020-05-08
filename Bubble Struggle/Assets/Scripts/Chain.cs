@@ -10,6 +10,7 @@ public class Chain : MonoBehaviour
     private Transform _player;
 
     public Vector3 displacement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class Chain : MonoBehaviour
         else
         {
             transform.position = _player.position - displacement;
-            transform.localScale = new Vector3(1f,0,1f);
+            transform.localScale = new Vector3(1f, 0, 1f);
         }
     }
 }
